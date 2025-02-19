@@ -27,4 +27,5 @@ for pdf in files:
     #pdfをwriterに順に追加していく
     writer.append(pdf)
 
-writer.write("MERGED.pdf")
+name = input("書き込み後のファイル名は如何様に?\n")
+writer.write(str(name) + ".pdf")
