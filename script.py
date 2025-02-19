@@ -5,6 +5,9 @@ from pathlib import Path
 p = Path("./pdfs")
 if not p.exists():
     print("pdfsディレクトリがありません。")
+    dirflag = input("ディレクトリを作りますか？(y or n)")
+    if dirflag == 'y':
+        p.mkdir()
     exit(1)
 
 files = sorted(p.iterdir())
