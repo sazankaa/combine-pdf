@@ -18,6 +18,8 @@ if not list(p.glob('*.pdf')):
 
 files = sorted(p.iterdir())
 
+print(f"全ページ数は{len(files)}でしたね。")
+
 #書き込みオブジェクトの作成
 writer = PdfWriter()
 
