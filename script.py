@@ -2,7 +2,11 @@ from pypdf import PdfWriter
 from pathlib import Path
 
 #pdfsフォルダの中身を順に取り出し、名前でソートしリストとして返す。
-files = sorted(Path("./pdfs").iterdir())
+p = Path("./pdfs")
+if not p.exists():
+    exit(1)
+    
+files = sorted(p.iterdir())
 
 #書き込みオブジェクトの作成
 writer = PdfWriter()
