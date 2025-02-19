@@ -12,7 +12,9 @@ if not p.exists():
         p.mkdir()
     exit(1)
 
-
+if not list(p.glob('*.pdf')):
+    print("ファイルなくね？")
+    exit(2) 
 
 files = sorted(p.iterdir())
 
