@@ -35,4 +35,4 @@ for pdf in files:
     writer.append(pdf)
 
 NAME = input("MERGED file name > ")
-writer.write(str(NAME) + ".pdf")
+writer.write(NAME + ".pdf")
