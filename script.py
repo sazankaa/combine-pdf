@@ -3,14 +3,23 @@ from pathlib import Path
 
 #pdfsフォルダの中身を順に取り出し、名前でソートしリストとして返す。
 
-p =Path("./pdfs")
+dir =Path("./pdfs")
 
-if not p.exists():
-    print("pdfsディレクトリがありません。")
-    dirflag = input("ディレクトリを作りますか？(y or n)\n")
-    if dirflag == 'y':
-        p.mkdir()
-    exit(1)
+def makekdir(): # dir つくる
+    if not dir.exists():
+        print("There is not './pdfs'")
+        question = input("Make Dirctory ? (y or n)\n") 
+        if question == 'y':
+            dir.mkdir()
+            print("Iretene!") 
+        elif question == 'n':
+            print("hoooooom...")
+        else:
+            print("Enter y or n!")
+        exit(1)
+
+
+
 
 if not list(p.glob('*.pdf')):
     print("ファイルなくね？")
