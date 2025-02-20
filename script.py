@@ -19,15 +19,15 @@ def makekdir(): # dir つくる
         exit(1)
 
 
+makekdir()
 
-
-if not list(p.glob('*.pdf')):
-    print("ファイルなくね？")
+if not list(dir.glob('*.pdf')):
+    print("No files.")
     exit(2) 
 
-files = sorted(p.iterdir())
+files = sorted(dir.iterdir())
 
-print(f"全ページ数は{len(files)}でしたね。")
+print(f"Page's number > {len(files)}")
 
 #書き込みオブジェクトの作成
 writer = PdfWriter()
@@ -36,5 +36,4 @@ for pdf in files:
     #pdfをwriterに順に追加していく
     writer.append(pdf)
 
-name = input("書き込み後のファイル名は如何様に?\n")
-writer.write(str(name) + ".pdf")
+writer.write(str(input("MERGED file name > ")) + ".pdf")
